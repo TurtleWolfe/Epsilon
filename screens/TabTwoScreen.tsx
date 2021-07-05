@@ -46,7 +46,7 @@ import WelcomeScreen from './componentScreens/WelcomeScreen';
 import Palette from '../constants/palette';
 import defaultStyles from '../constants/styles';
 import * as ImagePicker from "expo-image-picker";
-import useLocation from '../../hooks/useLocation';
+import useLocation from '../hooks/useLocation';
 
 // const categories = [
 //   { label: 'Furniture', value: 1 },

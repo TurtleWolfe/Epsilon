@@ -8,13 +8,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 
-import Colors from '../app/constants/Colors';
-import palette from '../app/constants/palette';
+import Colors from '../constants/Colors';
+import palette from '../constants/palette';
 // import defaultStyles from "../constants/styles";
-import defaultStyles from "../app/constants/styles";
+import defaultStyles from "../constants/styles";
 import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../app/screens/TabOneScreen';
-import TabTwoScreen from '../app/screens/TabTwoScreen';
+import TabOneScreen from '../screens/TabOneScreen';
+import TabTwoScreen from '../screens/TabTwoScreen';
 import AuthNavigator from './AuthNavigator';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 

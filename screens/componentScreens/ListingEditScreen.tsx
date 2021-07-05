@@ -139,6 +139,7 @@ const ListingEditScreen: React.FC<ListingEditScreenProps> = ({
       return alert('Could not save the listing');
     }
     // alert('Success');
+    resetForm();
   }
 
   return (

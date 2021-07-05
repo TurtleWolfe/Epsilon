@@ -10,7 +10,6 @@ import AppTextInput from "../AppTextInput";
 import ErrorMessage from "./AppErrorMessage";
 
 interface AppFormFieldProps {
-  // name?: string;
   name?: string;
   autoCapitalize?: string;
   autoCorrect?: boolean;
@@ -22,12 +21,9 @@ interface AppFormFieldProps {
   placeholder?: string;
   secureTextEntry?: boolean;
   textContentType?: string;
+  value?: string;
   width?: string | number;
   otherProps?: {};
-  // {
-  //   otherProps?: any;
-  //   children?: React.ReactNode;
-  // };
 } // typeScript
 
 const AppFormField: React.FC<AppFormFieldProps> = ({
@@ -35,13 +31,21 @@ const AppFormField: React.FC<AppFormFieldProps> = ({
   width = '100%',
   ...otherProps
 }) => {
-  const { setFieldTouched, handleChange, errors, touched } = useFormikContext();
+  const {
+    setFieldTouched,
+    //  handleChange,
+    setFieldValue,
+    errors,
+    touched,
+    values,
+  } = useFormikContext();
 
   return (
     <>
       <AppTextInput
         onBlur={() => setFieldTouched(name)}
-        onChangeText={handleChange(name)}
+        onChangeText={text => setFieldValue(name, text)}
+        value={values[name]}
         width={width}
         {...otherProps}
       />
@@ -49,15 +53,6 @@ const AppFormField: React.FC<AppFormFieldProps> = ({
     </>
   )
 } // AppFormField component
-
-// const styles = StyleSheet.create({
-//   container: {
-
-//   },
-//   textContainer: {
-//     backgroundColor: 'yellow',
-//   },
-// }) // style sheet for AppFormField
 
 export default AppFormField
 // default export of AppFormField
