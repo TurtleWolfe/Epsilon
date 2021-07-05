@@ -15,16 +15,20 @@ import { RootStackParamList } from '../types';
 import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 import AppNavigator from './AppNavigator';
+import OfflineNotice from '../components/OfflineNotice';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
-    <NavigationContainer
-      linking={LinkingConfiguration}
-      // theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
-      theme={navigationTheme}
-    >
-      <RootNavigator />
-    </NavigationContainer>
+    <>
+      <OfflineNotice />
+      <NavigationContainer
+        linking={LinkingConfiguration}
+        // theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
+        theme={navigationTheme}
+      >
+        <RootNavigator />
+      </NavigationContainer>
+    </>
   );
 }
 
