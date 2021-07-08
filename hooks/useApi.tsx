@@ -10,14 +10,9 @@ export default useApi = (apiFunc) => {
     const response = await apiFunc(...args);
     setLoading(false);// first story    
 
-    if (!response.ok) {
-      setError(true);
-      console.log(response.problem);
-      return;
-    }//set error to true and log problem
-
-    setError(false);
+    setError(!response.ok);
     setData(response.data);// another story
+    return response;
   }
 
   return { data, error, loading, request };

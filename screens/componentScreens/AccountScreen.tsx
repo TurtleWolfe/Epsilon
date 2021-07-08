@@ -10,6 +10,9 @@ import {
   Text,
   View,
 } from 'react-native'
+// import AuthContext from '../../auth/context';
+// import authStorage from '../../auth/storage';
+import useAuth from '../../auth/useAuth';
 
 import AppIcon from "../../components/AppIcon";
 import AppScreen from "../../components/AppScreen";
@@ -57,12 +60,18 @@ const AccountScreen: React.FC<AccountScreenProps> = ({
   children = <Text>default AccountScreen</Text>,
   AccountScreen = 'AccountScreen',
 }) => {
+  const { user, logOut } = useAuth();
+
+  // const handleLogOut = () => {
+  //   logOut();
+  // }
+
   return (
     <AppScreen style={styles.screen}>
       <View style={styles.menuContainer}>
         <AppListItem
-          title="TurtleWolfe"
-          subTitle="MyEmail@gmail.com"
+          title={user.name}
+          subTitle={user.email}
           image={require("../../assets/images/Turtlewolfe.png")}
         // appListImage={
         //   styles.applistImage
@@ -95,6 +104,7 @@ const AccountScreen: React.FC<AccountScreenProps> = ({
           // backgroundColor="#ffe66d"
           backgroundColor={Palette.danger}
         />}
+        onPress={() => logOut()}
       />
     </AppScreen>
   )

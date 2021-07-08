@@ -38,7 +38,8 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
     <ImageBackground
       blurRadius={3}
       style={styles.background}
-      source={require("../../assets/images/background.jpg")}
+      // source={require("../../assets/images/background.jpg")}
+      source={require("../../assets/images/background.png")}
     >
       <View style={styles.logoContainer}>
         <Image

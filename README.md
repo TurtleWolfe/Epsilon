@@ -84,6 +84,9 @@ expo install moment
 expo install react-native-fast-image
 # expo install react-native-expo-image-cache
 # expo install expo-blur
+expo install jwt-decode
+expo install expo-secure-store
+expo install expo-app-loading
 ```
 
 ```typescript
@@ -288,5 +291,3 @@ app Form Picker
 [blog.expo.io/automating-standalone-expo-app-builds-and-deployments-with-fastlane-exp-and-exptool](https://blog.expo.io/automating-standalone-expo-app-builds-and-deployments-with-fastlane-exp-and-exptool-9b2f5ad0a2cd 'Automating Standalone Expo App Builds and Deployments with Fastlane and Expo CLI')  
 [I'm an inline-style link with title](https://www.google.com "Google's Homepage")  
 [I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-
-Image by <a href="https://pixabay.com/users/sorbitolith-7303136/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5677518">Sven-M. Wölfle</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5677518">Pixabay</a>
