@@ -71,7 +71,7 @@ expo install @react-native-community/datetimepicker # "@react-native-community/d
 expo install apisauce                               # "apisauce": "^2.1.1",
 expo install expo-image-picker                      # "expo-image-picker": "~10.1.4",
 expo install expo-location                          # "expo-location": "~12.0.4",
-expo install expo-permissions                       # expo install expo-permissions
+# expo install expo-permissions                 ??  # expo install expo-permissions
 # expo install expo-sharing                           # "  "
 expo install formik                                 # "formik": "^2.2.9",
 expo install lottie-react-native                    # "lottie-react-native": "3.5.0",
@@ -87,6 +87,7 @@ expo install react-native-fast-image
 expo install jwt-decode
 expo install expo-secure-store
 expo install expo-app-loading
+expo install expo-notifications
 ```
 
 ```typescript
@@ -283,7 +284,11 @@ app Form Picker
 [Networking (1h) 6 Encapsulating Styles](https://codewithmosh.com/courses/887220/lectures/16617561 'custom notes')  
 [Networking (1h) 6 Encapsulating Styles](https://codewithmosh.com/courses/887220/lectures/16617561 'custom notes')  
 [Networking (1h) 6 Encapsulating Styles](https://codewithmosh.com/courses/887220/lectures/16617561 'custom notes')  
-[Networking (1h) 6 Encapsulating Styles](https://codewithmosh.com/courses/887220/lectures/16617561 'custom notes')
+[Networking (1h) 6 Encapsulating Styles](https://codewithmosh.com/courses/887220/lectures/16617561 '{"_displayInForeground": true }')
+
+```json
+{ "_displayInForeground": true }
+```
 
 [Uploading Apps to the Apple App Store and Google Play](https://docs.expo.io/distribution/uploading-apps/ 'Uploading Apps to the Apple App Store and Google Play')  
 [Overview](https://docs.expo.io/distribution/introduction/ 'Overview')  

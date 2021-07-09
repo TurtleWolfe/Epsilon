@@ -19,11 +19,12 @@ import OfflineNotice from '../components/OfflineNotice';
 import AuthNavigator from './AuthNavigator';
 import AuthContext from '../auth/context';
 import authStorage from '../auth/storage';
+import navigation from './rootNavigation';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
     <>
-      <OfflineNotice />
+      {/* <OfflineNotice /> */}
       <NavigationContainer
         linking={LinkingConfiguration}
         // theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
@@ -58,22 +59,39 @@ function RootNavigator() {
       onFinish={() => setIsReady(true)}
       onError={console.log('error')}
     />
-
+  // const navigationRef = React.createRef();
+  // const navigation = navigationRef.current;
+  // navigation.navigate()
   return (
     <AuthContext.Provider
       value={{ user, setUser }}
     >
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <OfflineNotice />
+      <Stack.Navigator
+        ref={navigation}
+        // Warning: Function components cannot be given refs. Attempts to access this ref will fail. Did you mean to use React.forwardRef()?
+        screenOptions={{ headerShown: false }}
+      >
+        {/* <Stack.Screen
+          name="Root"
+          component={BottomTabNavigator}
+        /> */}
         {user ?  // IF USER 
-          //  <Stack.Screen name="Root" component={BottomTabNavigator} />      
-          <Stack.Screen name="Root" component={AppNavigator} />
+          <Stack.Screen
+            name="Root"
+            component={AppNavigator}
+          />
           :  // ELSE
-          <Stack.Screen name="Root" component={AuthNavigator} />
+          <Stack.Screen
+            name="Root"
+            component={AuthNavigator}
+          />
         }
-
-        {/* <Stack.Screen name="Root" component={AppNavigator} /> */}
-        {/* <Stack.Screen name="Root" component={AuthNavigator} /> */}
-        <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
+        <Stack.Screen
+          name="NotFound"
+          component={NotFoundScreen}
+          options={{ title: 'Oops!' }}
+        />
       </Stack.Navigator>
     </AuthContext.Provider>
   );

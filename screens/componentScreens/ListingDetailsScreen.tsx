@@ -6,11 +6,14 @@
 import React from 'react'
 import {
   Image,
+  KeyboardAvoidingView,
+  Platform,
   StyleSheet,
   // Text,
   View,
 } from 'react-native'
 import AppText from "../../components/AppText";
+import ContactSellerForm from '../../components/forms/ContactSellerForm';
 import AppListItem from "../../components/lists/AppListItem";
 import Palette from '../../constants/palette';
 
@@ -24,36 +27,44 @@ const ListingDetailsScreen: React.FC<ListingDetailsScreenProps> = ({
   const listing = route.params;
 
   return (
-    <View style={styles.container}>
-      <Image
-        style={styles.image}
-        source={listing.image}
-      />
-      <View style={styles.detailsContainer}>
-        <AppText
-          style={styles.title}>
-          {listing.title}
-        </AppText>
-        <AppText
-          style={styles.price}>
-          ${listing.price}
-        </AppText>
-        <View style={styles.userContainer}>
-          <AppListItem
-            // image={require("../assets/mosh.jpg")}
-            image={require("../../assets/images/Turtlewolfe.png")}
-            title="TurtleWolfe"
-            subTitle="5 Listings"
-            appListItem={
-              styles.appListItem
-            }
-            appListImage={
-              styles.applistImage
-            }
+    <KeyboardAvoidingView
+      behavior="position"
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 100}
+    >
+      <View style={styles.container}>
+        <Image
+          style={styles.image}
+          source={listing.image}
+        />
+        <View style={styles.detailsContainer}>
+          <AppText
+            style={styles.title}>
+            {listing.title}
+          </AppText>
+          <AppText
+            style={styles.price}>
+            ${listing.price}
+          </AppText>
+          <View style={styles.userContainer}>
+            <AppListItem
+              // image={require("../assets/mosh.jpg")}
+              image={require("../../assets/images/Turtlewolfe.png")}
+              title="TurtleWolfe"
+              subTitle="5 Listings"
+              appListItem={
+                styles.appListItem
+              }
+              appListImage={
+                styles.applistImage
+              }
+            />
+          </View>
+          <ContactSellerForm
+            listing={listing}
           />
         </View>
       </View>
-    </View>
+    </KeyboardAvoidingView>
   )
 }
 
